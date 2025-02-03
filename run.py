@@ -5,7 +5,6 @@ import hydra
 import jax
 import matplotlib
 
-import wandb
 from omegaconf import DictConfig, OmegaConf
 
 from utils.helper import flatten_dict, reset_device_memory
@@ -25,7 +24,8 @@ def main(cfg: DictConfig) -> None:
     if not cfg.visualize_samples:
         matplotlib.use('agg')
 
-    if cfg.use_wandb:
+    if cfg.get('use_wandb', False):
+        import wandb
         wandb.init(**cfg.wandb,
                    group=f'{cfg.algorithm.name}',
                    job_type=f'{cfg.target.name}_{target.dim}D',

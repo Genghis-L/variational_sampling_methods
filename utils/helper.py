@@ -1,6 +1,8 @@
 import gc
 import jax
 import jax.numpy as jnp
+from flax import traverse_util
+from jax.lib import xla_extension
 
 
 def flatten_dict(d, parent_key='', sep='_'):
@@ -32,7 +34,7 @@ def reset_device_memory(delete_objs=True):
   Returns:
     number of DeviceArrays that were manually freed.
   """
-    dvals = (x for x in gc.get_objects() if isinstance(x, jax.xla.DeviceValue))
+    dvals = (x for x in gc.get_objects() if isinstance(x, xla_extension.DeviceArray))
     n_deleted = 0
     for dv in dvals:
         if not isinstance(dv, jax.xla.DeviceConstant):

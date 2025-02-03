@@ -1,3 +1,4 @@
+
 name: smc
 batch_size: ${target.all.batch_size}
 num_temps: 128

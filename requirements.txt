@@ -1,7 +1,5 @@
--f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
-jaxlib==0.4.28+cuda12.cudnn89
-nvidia-cudnn-cu12==8.9.7.29
-jax==0.4.28
+jaxlib==0.4.19
+jax==0.4.19
 numpyro==0.15.0
 tensorflow==2.16.1
 flax==0.8.3
@@ -14,10 +12,12 @@ ml-collections==0.1.1
 ott-jax==0.4.6
 tensorflow-probability==0.24.0
 dm-haiku==0.0.12
-distrax==0.1.5
+ml-dtypes==0.3.1
 blackjax==1.0.0
 mergedeep==1.3.4
 matplotlib==3.8.4
 pandas==2.2.2
-inference-gym=0.0.4
+inference-gym==0.0.4
 tf-keras==2.16.0
+scipy==1.11.1
+distrax==0.1.5
